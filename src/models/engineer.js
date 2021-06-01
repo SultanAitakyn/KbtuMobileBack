@@ -31,7 +31,7 @@ module.exports = {
   // },
     getEngineer: (offset, row, condition, condition2) => {
     return new Promise((resolve, reject) => {
-      sql =  "SELECT * FROM engineer "+condition+' '+condition2+" LIMIT "+offset+", "+row;
+      sql =  "SELECT * FROM engineer ORDER BY date_created DESC";
       conn.query(sql, (err, result) => {
         if(!err){
           resolve(result);

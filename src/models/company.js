@@ -3,7 +3,7 @@ const conn = require('../configs/connection')
 module.exports = {
   getCompany: () => {
     return new Promise((resolve, reject) => {
-      conn.query('SELECT * FROM company', (err, result) => {
+      conn.query('SELECT * FROM company ORDER BY date_created DESC', (err, result) => {
         if (!err) {
           resolve(result)
         } else {
